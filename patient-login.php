@@ -1,3 +1,32 @@
+<?php
+    $email= $_POST['email'];
+    $password= $_POST['password'];
+
+    // Database Connection
+    $con = new mysqli("localhost","root","","hospitalmanagement");
+
+    if($con->connect_error){
+        die("Try Again : ".$con->connect_error );
+    } else {
+        $stmt = $con->prepare("select * from patientlogin where email = ?");
+        $stmt -> bind_param("s",$email);
+        $stmt -> execute();
+        $stmt_result = $stmt->get_result();
+        if($stmt_result->num_rows>0){
+            $data = $stmt_result->fetch_assoc();
+            if($data['password']===$password){
+                $msg = 'Login Complete! Thanks';
+                echo "<script> window.location.assign('patient.html'); </script>";
+            }
+            else{
+                echo "Invalid Email Or Password";
+            }
+        } else{
+            echo "Invalid email or password";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,28 +57,26 @@
     <a class="navbar-brand fs-2 fw-bold" href="index.html">
         <h1 class="text-center fw-bold mt-5 fs-1"><span class="text-primary">Hospital</span> Management Center</h1>
     </a>
-    <p class="text-center fw-bold mt-3 fs-4"><span class=" text-primary">Patient</span> Login</p>
+    <p class="text-center fw-bold mt-3 fs-4"><span class=" text-primary">Doctors</span> Login</p>
     <section class=" container d-flex justify-content-center mt-5 pt-5">
-        <form>
+        <form action="#" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" name="email" required id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" name="password" required id="exampleInputPassword1">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
             <input class="btn btn-primary" type="submit" value="Submit">
+
         </form>
     </section>
-    <!-- <div class="container d-flex justify-content-center mt-4">
-        <a class="btn btn-primary px-4 py-2" href="#" role="button"><span class="fw-bold">Login</span></a>
-    </div>-->
 
     <br><br>
     <p class="text-center fw-bold mt-3 fs-6">Have you forget your password? <a href="reset.html">Reset Here</a>
