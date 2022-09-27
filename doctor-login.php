@@ -79,7 +79,7 @@
     </section>
 
     <br><br>
-    <p class="text-center fw-bold mt-3 fs-6">Have you forget your password? <a href="reset.html">Reset Here</a>
+    <p class="text-center fw-bold mt-3 fs-6">Have you forget your password? <a href="reset.php">Reset Here</a>
     <p class="text-center fw-bold mt-3 fs-6">If you don't have any account <a href="signup.php">Signup Here</a></p>
 
 
