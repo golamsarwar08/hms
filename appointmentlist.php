@@ -48,7 +48,7 @@ session_start();
           <a class="nav-link" href="doctorlist.php">Doctor List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="appointment.php">Appointment List</a>
+          <a class="nav-link" href="appointmentlist.php">Appointment List</a>
         </li>
       </ul>
     </div>
@@ -58,11 +58,11 @@ session_start();
     <table class="table table-striped px-5">
         <thead>
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Doctor Name</th>
                 <th scope="col">Department</th>
-                <th scope="col">Email</th>
-                <th scope="col">Fees</th>
+                <th scope="col">Appointment Date</th>
+                <th scope="col">Appointment Time</th>
                 <th scope="col">Phone No.</th>
             </tr>
         </thead>
@@ -70,19 +70,19 @@ session_start();
         <?php
 
         $i=0;
-        $tcr_query = mysqli_query($conn,"select * from doctorlist order by dc_id asc");
+        $tcr_query = mysqli_query($conn,"select * from appointment");
         while($tcr_data = mysqli_fetch_array($tcr_query)){
           $i++;
 
         ?>
           <tbody>
               <tr>
-                <td><?php echo $tcr_data['dc_id']; ?></td>
-                <td><?php echo $tcr_data['Name']; ?></td>
+                <td><?php echo $tcr_data['Patient_Name']; ?></td>
+                <td><?php echo $tcr_data['Doctor_Name']; ?></td>
                 <td><?php echo $tcr_data['Department']; ?></td>
-                <td><?php echo $tcr_data['Email']; ?></td>
-                <td><?php echo $tcr_data['Fees']; ?></td>
-                <td><?php echo $tcr_data['Phone No.']; ?></td>
+                <td><?php echo $tcr_data['App_Date']; ?></td>
+                <td><?php echo $tcr_data['App_Time']; ?></td>
+                <td><?php echo $tcr_data['Phone']; ?></td>
               </tr>
           </tbody>
 

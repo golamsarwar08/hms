@@ -3,10 +3,10 @@
 ob_start();
 session_start();
 
-if($_SESSION['name']!='oasis')
-{
-  header('location: doctor.html');
-}
+// if($_SESSION['name']!='oasis')
+// {
+//   header('location: doctor.html');
+// }
 ?>
 <?php include('doctorconnect.php');?>
 
@@ -49,7 +49,7 @@ if($_SESSION['name']!='oasis')
           <a class="nav-link" href="doctorlist.php">Doctor List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="appointment.php">Appointment List</a>
+          <a class="nav-link" href="appointment.php"></a>
         </li>
       </ul>
     </div>
@@ -76,6 +76,7 @@ if($_SESSION['name']!='oasis')
           <th scope="col">Weigth</th>
           <th scope="col">Address</th>
           <th scope="col">Problem</th>
+        
         </tr>
       </thead>
 

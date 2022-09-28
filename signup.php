@@ -119,13 +119,10 @@ include('doctorconnect.php');
       <label for="input1" class="col-sm-3 control-label">Role</label>
       <div class="col-sm-7">
         <label>
-          <input type="radio" name="type" id="optionsRadios1" value="student" checked> Student
+          <input type="radio" name="type" id="optionsRadios1" value="student" checked> Doctor
         </label>
             <label>
-          <input type="radio" name="type" id="optionsRadios1" value="teacher"> Teacher
-        </label>
-        <label>
-          <input type="radio" name="type" id="optionsRadios1" value="admin"> Admin
+          <input type="radio" name="type" id="optionsRadios1" value="teacher"> Patient
         </label>
       </div>
       </div>
@@ -134,7 +131,7 @@ include('doctorconnect.php');
     </form>
   </div>
     <br>
-    <p><strong>Already have an account? <a href="index.php">Login</a> here.</strong></p>
+    <p><strong>Already have an account? <a href="index.html"></a> here.</strong></p>
 
 </div>
 
