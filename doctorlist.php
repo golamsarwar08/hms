@@ -48,7 +48,7 @@ session_start();
           <a class="nav-link" href="doctorlist.php">Doctor List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="appointment.php">Appointment List</a>
+          <a class="nav-link" href="appointmentlist.php">Appointment List</a>
         </li>
       </ul>
     </div>

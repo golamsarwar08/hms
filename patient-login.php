@@ -57,7 +57,7 @@
     <a class="navbar-brand fs-2 fw-bold" href="index.html">
         <h1 class="text-center fw-bold mt-5 fs-1"><span class="text-primary">Hospital</span> Management Center</h1>
     </a>
-    <p class="text-center fw-bold mt-3 fs-4"><span class=" text-primary">Doctors</span> Login</p>
+    <p class="text-center fw-bold mt-3 fs-4"><span class=" text-primary">Patient</span> Login</p>
     <section class=" container d-flex justify-content-center mt-5 pt-5">
         <form action="#" method="POST">
             <div class="mb-3">
